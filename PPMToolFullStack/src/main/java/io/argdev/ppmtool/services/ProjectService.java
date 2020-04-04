@@ -18,10 +18,8 @@ public class ProjectService {
 
         //TODO check for duplicate project identifier before saving to DB
         if (this.projectRepository.existsProjectByProjectIdentifier(project.getProjectIdentifier()))
-            //throw new DuplicateProjectIdentifierException(project.getProjectIdentifier());
-            throw new ProjectIdException(project.getProjectIdentifier());
+            throw new ProjectIdException("Project Identifier '" + project.getProjectIdentifier() + "' already exists!");
 
-        project.setProjectIdentifier(project.getProjectIdentifier().toUpperCase());
         return this.projectRepository.save(project);
     }
 }
