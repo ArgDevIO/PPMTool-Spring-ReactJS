@@ -2,6 +2,7 @@ package io.argdev.ppmtool.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -10,6 +11,7 @@ import java.util.Date;
 
 @Entity
 @Data
+@NoArgsConstructor
 public class Project {
 
     @Id
